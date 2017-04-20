@@ -15,9 +15,9 @@ ActiveRecord::Schema.define(version: 20170420230237) do
   create_table "widgets", force: :cascade do |t|
     t.string   "title"
     t.text     "attributes"
-    t.string   "widgetpicture"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.string   "widgetpictures"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
 end

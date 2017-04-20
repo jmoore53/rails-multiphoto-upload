@@ -3,7 +3,7 @@ class CreateWidgets < ActiveRecord::Migration[5.0]
     create_table :widgets do |t|
       t.string :title
       t.text :attributes
-      t.string :widgetpicture
+      t.string :widgetpictures
       t.timestamps
     end
   end
