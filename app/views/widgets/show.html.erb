@@ -1,0 +1,10 @@
+<% if !@widget.widgetpictures.nil? %>
+    <% @widget.widgetpictures.each do |f| %>
+        <%= image_tag(f, style:"width:50px; height:50px") %>
+    <% end %>
+<% end %>
+<% if !@widget.widgetAttributes.nil? %>
+    <% @widget.widgetAttributes.gsub(/(\[\"|\"\])/, '').split('", "').each do |f| %>
+        <%= f %>
+    <% end %>
+<% end %>
