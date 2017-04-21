@@ -5,6 +5,6 @@
 <% end %>
 <% if !@widget.widgetAttributes.nil? %>
     <% @widget.widgetAttributes.gsub(/(\[\"|\"\])/, '').split('", "').each do |f| %>
-        <%= f %>
+        <div><%= f %></div>
     <% end %>
 <% end %>
