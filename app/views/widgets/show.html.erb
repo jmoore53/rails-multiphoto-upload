@@ -1,6 +1,12 @@
+<div class="container-fluid">
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <div class="navbar-brand">Event Name</div>
+</nav>
+<div class="col-sm-10 offset-sm-1 mt-2">
 <% if !@widget.widgetpictures.nil? %>
     <% @widget.widgetpictures.each do |f| %>
-        <%= image_tag(f, style:"width:50px; height:50px") %>
+        <%= f %>
+        <%= image_tag(f, class:"img-thumbnail", style:"height:10rem") %>
     <% end %>
 <% end %>
 <% if !@widget.widgetAttributes.nil? %>
@@ -8,3 +14,5 @@
         <div><%= f %></div>
     <% end %>
 <% end %>
+</div>
+</div>
