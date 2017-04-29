@@ -1,4 +1,6 @@
 <h2>Widget Machine</h2>
+<%= link_to "NEW WIDGET", new_widget_url %>
+<hr>
 <% @widgets.each do |f| %>
     <div><%= link_to "Widget "+f.id.to_s, widget_path(f) %></div>
 <% end %>
