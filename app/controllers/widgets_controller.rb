@@ -22,6 +22,6 @@ class WidgetsController < ApplicationController
     end
     private
     def widget_params
-        params.require(:widget).permit(:title,{widgetAttributes: []}, {widgetpictures: []})
+        params.require(:widget).permit(:user_id,{widgetAttributes: []}, {widgetpictures: []})
     end
 end

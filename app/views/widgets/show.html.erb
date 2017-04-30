@@ -3,15 +3,25 @@
   <div class="navbar-brand">Event Name</div>
 </nav>
 <div class="col-sm-10 offset-sm-1 mt-2">
+<div class="container-fluid">
+<div class="row">
+    <div class="col-sm-4 mb-2 text-center"><button type="button" class="btn btn-primary">Add Pictures</button></div>
+    <div class="col-sm-4 mb-4 text-center"><button type="button" class="btn btn-primary">See Members</button></div>
+</div>
+<div class="row">
 <% if !@widget.widgetpictures.nil? %>
     <% @widget.widgetpictures.each_with_index do |image, value| %>
-        <%= image_tag(image, class:"mb-2 img-thumbnail", style:"height:10rem; height:10rem;") %>
+        <%= image_tag(image, class:"mb-2 ml-2 img-thumbnail", style:"height:10rem; height:10rem;") %>
     <% end %>
 <% end %>
+<!--
 <% if !@widget.widgetAttributes.nil? %>
     <% @widget.widgetAttributes.gsub(/(\[\"|\"\])/, '').split('", "').each do |f| %>
         <div><%= f %></div>
     <% end %>
 <% end %>
+-->
+</div>
+</div>
 </div>
 </div>
