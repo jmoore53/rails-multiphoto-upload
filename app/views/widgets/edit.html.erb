@@ -1,0 +1,7 @@
+<%= form_for(@widget, url: widget_path(@widget)) do |f| %>
+<%= f.text_field :user_id %>
+<% @widget.widgetpictures.each do |f| %>
+    <%= image_tag(f) %>
+<% end %>
+<%= f.submit "Update Attributes" %>
+<% end %>
