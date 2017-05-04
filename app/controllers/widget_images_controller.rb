@@ -9,7 +9,10 @@ class WidgetImagesController < ApplicationController
     def destroy
         remove_image_at_index(params[:id].to_i)
         flash[:error] = "Failed to delete image" unless @widget.save
-        redirect_to :back   
+        redirect_to @widget 
+    end
+    def show
+        @picture = @widget.widgetpictures[params[:id].to_i]
     end
 
     private
