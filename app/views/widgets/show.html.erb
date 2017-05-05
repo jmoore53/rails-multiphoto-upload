@@ -1,17 +1,29 @@
 <div class="container-fluid">
+<!-- Begin Navbar -->
 <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-  <div class="navbar-brand">Event Name</div>
-  <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Event Options
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <%= link_to "Add Pictures", new_widget_widget_image_path(@widget), class:"dropdown-item" %> 
-    <a class="dropdown-item" href="#">See Members</a>
-    <a class="dropdown-item" href="#">Download All Pictures</a>
-  </div>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    <span class="navmenu">Navigation</span>
+</button>
+<div class="collapse navbar-collapse" id="navbarToggler">
+    <div class="navbar-brand">Event Name</div>
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+            <%= link_to "Home", root_url, class:"nav-link" %>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Event Options</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <%= link_to "Add Pictures", new_widget_widget_image_path(@widget), class:"dropdown-item" %> 
+                <a class="dropdown-item" href="#">See Members</a>
+                <a class="dropdown-item" href="#">Download All Pictures</a>
+            </div>
+        </li>
+    </ul>
+</div>
 </div>
 </nav>
+<!-- End Navbar -->
 <div class="col-sm-10 offset-sm-1 mt-2">
 <div class="container-fluid">
 <div class="row">
