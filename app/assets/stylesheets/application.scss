@@ -15,3 +15,9 @@
  */
 
 @import "bootstrap";
+.custom-file-control:before{
+  content: "Browse";
+}
+.custom-file-control:after{
+  content: "Add Pictures...";
+}
