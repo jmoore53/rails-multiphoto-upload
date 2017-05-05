@@ -1,0 +1,42 @@
+<div class="container mt-4 ml-2 mr-2">
+<%= form_for(@widget, url: widget_widget_images_path(@widget), method: :post) do |f| %>
+        <div class="row mb-2">
+        <label class="custom-file">
+        <%= f.file_field :images, multiple: true, class:"custom-file-input", id:"widget-upload" %>
+        <%= f.hidden_field :widgetpictures_cache %>
+        <span class="custom-file-control"></span>
+        </label>
+        </div>
+        <div class="row mb-2">
+        <%= f.submit "Add Pictures", class:"btn btn-primary" %> 
+        </div>
+<% end %> 
+</div>
+<div id="images" class="container">
+</div>
+
+<script>
+$(function() {
+  function readURL(input) {
+    console.log(input.files);
+    if(input.files){
+    for(var i = 0; i < input.files.length; i++){ 
+    if (input.files && input.files[i]) {
+      var reader = new FileReader();
+
+      reader.onload = function (e) {
+        console.log(e.target.result);
+        $('#images').prepend($('<img>',{id:'theImg', class:'img-thumbnail', style:'height:20rem', src: e.target.result}))
+      }
+      reader.readAsDataURL(input.files[i]);
+    }
+  }
+  }
+  }
+
+  $("#widget-upload").change(function(){
+    $('#img_prev').removeClass('hidden');
+    readURL(this);
+  });
+});
+</script>
