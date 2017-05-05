@@ -10,6 +10,7 @@ class WidgetsController < ApplicationController
         if @widget.save
             redirect_to @widget
         else
+            flash[:error] = "Unable to create your event"
             render "new"
         end
     end
@@ -34,6 +35,6 @@ class WidgetsController < ApplicationController
         @widget.widgetpictures = images
     end
     def widget_params
-        params.require(:widget).permit(:user_id,{widgetAttributes: []}, {widgetpictures: []})
+        params.require(:widget).permit(:widget_name, :widget_date, {widgetAttributes: []}, {widgetpictures: []})
     end
 end

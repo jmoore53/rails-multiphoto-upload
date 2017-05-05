@@ -1,5 +1,21 @@
+<div class="container">
+<div class="col-sm-6 mt-4">
+<h2 class="mb-4">Create an Event</h2>
 <%= form_for @widget do |f| %>
-    <%= f.number_field :user_id %>
-    <%= f.file_field :widgetpictures, multiple:true %>
-    <%= f.submit "Create Attributes" %>
+    <div class="form-group row">
+    <label class="col-4 col-form-label">Event Name</label>
+    <div class="col-8">
+    <%= f.text_field :widget_name, class:"form-control" %>
+    </div>
+    </div>
+    <div class="form-group row">
+    <label class="col-4 col-form-label">Event Date (Optional)</label>
+    <div class="col-8">
+    <%= f.date_select(:widget_date, include_blank:true, default:nil, class:"form-control") %>
+    </div>
+    </div>
+    <%= f.submit "Create Event" %>
+    </div>
 <% end %>
+</div>
+</div>
