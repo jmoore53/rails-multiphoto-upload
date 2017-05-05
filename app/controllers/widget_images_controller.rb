@@ -1,10 +1,11 @@
 class WidgetImagesController < ApplicationController
     before_action :set_widget
-
+    def new
+    end
     def create
         add_more_images(widget_image_params[:images])
         flash[:error] = "Failed to Upload Images" unless @widget.save
-        redirect_to :back
+        redirect_to widget_path(@widget)
     end
     def destroy
         remove_image_at_index(params[:id].to_i)
