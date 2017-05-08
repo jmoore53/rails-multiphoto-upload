@@ -26,9 +26,10 @@ class WidgetImagesController < ApplicationController
         remain_images = @widget.widgetpictures
         if(remain_images.length == 1)
             @widget.remove_widgetpictures!
+        else
+            deleted_image = remain_images.delete_at(index)
+            @widget.widgetpictures = remain_images
         end
-        deleted_image = remain_images.delete_at(index)
-        @widget.widgetpictures = remain_images
     end
     def set_widget
         @widget = Widget.find(params[:widget_id])
