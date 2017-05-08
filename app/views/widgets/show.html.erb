@@ -7,6 +7,7 @@
 </button>
 <div class="collapse navbar-collapse" id="navbarToggler">
     <div class="navbar-brand"><%= @widget.widget_name %></div>
+    <div class="nav-link"><%= @widget.widget_date.strftime("%m/%d/%Y") if @widget.widget_date %></div>
     <ul class="navbar-nav mr-auto">
         <li class="nav-item">
             <%= link_to "Home", root_url, class:"nav-link" %>
@@ -16,7 +17,8 @@
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <%= link_to "Add Pictures", new_widget_widget_image_path(@widget), class:"dropdown-item" %> 
                 <a class="dropdown-item" href="#">See Members</a>
-                <a class="dropdown-item" href="#">Download All Pictures</a>
+                <!-- <a class="dropdown-item" href="#">Download All Pictures</a> -->
+                <%= link_to "Manage Event", edit_widget_path(@widget), class:"dropdown-item" %>
             </div>
         </li>
     </ul>
