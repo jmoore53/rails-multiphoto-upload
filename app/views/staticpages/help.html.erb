@@ -1,4 +1,3 @@
-<div class="container">
 <!-- Begin Navbar -->
 <nav class="navbar navbar-toggleable-md navbar-light bg-faded mb-2">
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,23 +8,22 @@
     <div class="navbar-brand">Picleus</div>
     <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-            <%= link_to "New Event", new_widget_url, class:"nav-link" %>
-        </li>
-        <li class="nav-item">
-            <%= link_to "Delete Policy", policy_url, class:"nav-link" %>
+            <%= link_to "Home", "/", class:"nav-link" %>
         </li>
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <%= link_to "About", about_url, class:"dropdown-item" %>
                 <%= link_to "Help", help_url, class:"dropdown-item" %>
+                <%= link_to "Policy", policy_url, class:"dropdown-item" %>
             </div>
         </li>
     </ul>
 </div>
 </nav>
 <!-- End Navbar -->
-<% @widgets.each do |f| %>
-    <div><%= link_to f.widget_name ||= "Widget "+f.id.to_s, widget_path(f) %></div>
-<% end %>
+<div class="container">
+<div class="row">
+<h1>Help</h1>
+</div>
 </div>
